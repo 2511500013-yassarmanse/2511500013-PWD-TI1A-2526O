@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<isi header fu head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Judul Halaman</title>
@@ -9,7 +9,7 @@
 
 <body>
     <header>
-        <h1>Ini Header ku</h1>
+        <h1>Ini Header</h1>
         <nav>
             <ul>
                 <li><a href="#home">Beranda</a></li>
@@ -28,20 +28,31 @@
         <section id="about">
             <h2>Tentang Saya </h2>
             <p><strong>nim: </strong> 2511500013</p>
-            <p><strong>nama lengkap:</strong> Yassar Manse</p>
-            <p><strong>tempat lahir:</strong> pangkalpinang</p>
-            <p><strong>tanggal lahir:</strong> 03-04-2007</p>
-            <p><strong>Hobi:</strong> bermain Game</p>
+            <p><strong>nama lengkap: </strong> Yassar Manse</p>
+            <p><strong>tempat lahir: </strong> pangkalpinang</p>
+            <p><strong>tanggal lahir: </strong> 03-04-2007</p>
+            <p><strong>Hobi: </strong> bermain Game</p>
             <p><strong>pasangan: </strong> HTS(hubungan tahap serius)</p>
             <p><strong>Pekerjaan:</strong> Mahasiswa</p>
-            <p><strong>nama orang tua:</strong> Deny manse dan Aminah</p>
-            <p><strong>nama kakak:</strong> tidak ada</p>
-            <p><strong>nama adek:</strong> tidak ada</p>
+            <p><strong>nama orang tua: </strong> Deny manse dan Aminah</p>
+            <p><strong>nama kakak: </strong> tidak ada</p>
+            <p><strong>nama adek: </strong> tidak ada</p>
         </section>
 
         <section id="contact">
-            <h2>Kontak Kami</h2>
-            <p>contoh form</p>
+            <h2>Kontak Kami ya </h2>
+            <form action="" method="get">
+                <label for="txtNama">Nama:</label>
+                <input type="text" id="txtNama" name="txtNama" placeholder="Masukkan nama " required autocomplete="name">"
+
+                <label for="txtEmail">Email</label>
+                <input type="text"> id="txtEmail" name="txtEmail" placeholder="Masukkan email" required autocomplete="email">
+
+                <label for="txtPesan">Pesan</label>
+                <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="Tulis pesan anda..." required></textarea>
+                <buttoN type="submit">Kirim</buttoN>
+                </buttoN type="reset">Batal</buttoN>
+            </form>
         </section>
     </main>
 
