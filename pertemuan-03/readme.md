@@ -9,4 +9,5 @@ Hari ini , rabu 08 oktober 2025 , saya bealjar :
     <li>membuat struktur form untuk section contact</li>
     <li>membuat styling untuk sector id #about</li>
     <l1>membuat styling untuk selector id #about elemen h2</l1>
-</ol>
+    <li>membuat styling untuk selector id #about elemen p<l1>
+    </ol>
