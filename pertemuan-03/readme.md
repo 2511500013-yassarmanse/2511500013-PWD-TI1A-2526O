@@ -8,4 +8,5 @@ Hari ini , rabu 08 oktober 2025 , saya bealjar :
     <li>mengunakan file emmet.html pertemuan-02 untuk file index.html pertemuan-03</l1>
     <li>membuat struktur form untuk section contact</li>
     <li>membuat styling untuk sector id #about</li>
+    <l1>membuat styling untuk selector id #about elemen h2</l1>
 </ol>
