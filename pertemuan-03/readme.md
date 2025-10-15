@@ -12,5 +12,4 @@ Hari ini , rabu 08 oktober 2025 , saya bealjar :
     <li>membuat styling untuk selector id #about elemen p</li>
     <li>membuat styling untuk selector id #about elemen strong</li>
     <li>membuat styling untuk selector id #about mode responsif (mobile)</li>
-    <li>membuat styling id section#contact</li>
     </ol>
