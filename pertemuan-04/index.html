@@ -1,1 +1,61 @@
-# pertemuan-04
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas HTML</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <header>
+        <h1>Ini Header</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home"> 
+            <h2>Selamat datang semua</h2>
+            <p>Ini contoh paragraf html</p>
+        </section>
+
+        <section id="about">
+            <h2>Tentang saya</h2>
+            <p><strong>nim: </strong> 2511500013</p>
+            <p><strong>nama lengkap: </strong> Yassar Manse</p>
+            <p><strong>tempat lahir: </strong> pangkalpinang</p>
+            <p><strong>tanggal lahir: </strong> 03-04-2007</p>
+            <p><strong>Hobi: </strong> bermain Game</p>
+            <p><strong>pasangan: </strong> HTS(hubungan tahap serius)</p>
+            <p><strong>Pekerjaan:</strong> Mahasiswa</p>
+            <p><strong>nama orang tua: </strong> Deny manse dan Aminah</p>
+            <p><strong>nama kakak: </strong> tidak ada</p>
+            <p><strong>nama adek: </strong> tidak ada</p>
+        </section>
+
+        <section id="contact">
+            <h2>kontak saya ini</h2>
+            <form action="" method="get">
+                <label for="txtNama">Nama:</label>
+                <input type="text" id="txtNama" name="txtNama" placeholder="masukkan nama" required autocomplete="name">
+
+                <label for="txtEmail">Email</label>
+                <input type="text" id="txtEmail" placeholder="masukkan email" required autocomplete="email">
+
+                <label for="txtPesan">Pesan</label>
+                <textarea id="txtPesan" name="txtPesan" rows="4" placeholder="tulis pesan anda..." required></textarea>
+
+                <button type="submit">Kirim</button>
+                <button type="reset">Batal</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Yassar Manse  (251150013)</p>
+    </footer>
+</body>
+</html>
