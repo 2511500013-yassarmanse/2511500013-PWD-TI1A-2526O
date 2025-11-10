@@ -127,8 +127,12 @@ document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
     } else {
         alert("Terima kasih, " + nama.value + "!\nPesan Anda telah dikirim.");
+<<<<<<< HEAD
         //e.target.reset();
         e.target.submit();
+=======
+        e.target.reset();
+>>>>>>> a132a9e8f4373bb594d498faf6a21418759f18e3
     }
 });
 
