@@ -52,6 +52,74 @@ endif;
       <p>Ini contoh paragraf HTML.</p>
     </section>
 
+
+
+  <section id="form_profil">
+    <h2>pendafataran profil pengunjung</h2>
+    <form action="form_profil_proses.php" method="POST">
+    <label for="nim">
+      <span>NIM:</span>
+      <input type="text" id="nim" name="nim" placeholder="isi NIM" required>
+</label>
+
+<label for="nama lengkap">
+  <span>nama lengkap:</span>
+  <input type ="text" id="nim" name ="nama lengkap" placeholder="isi nama lengkap" required>
+</label>
+
+<label for ="tempat lahir">
+  <span>tempat lahir :</span>
+  <input type="text" id="tempat lahir" name="tempat lahir" placeholder="isi tempat lahir" required>
+</label>
+
+<label for ="tanggal lahir">
+  <span>tanggal lahir :</span>
+  <input type="text" id="tanggal lahir" name="tanggal lahir" placeholder="isi tanggal lahir" required>
+</label>
+
+<label for ="hobi">
+  <span>hobi :</span>
+  <input type="text" id="hobi" name="hobi" placeholder="isi hobi" required>
+</label>
+
+<label for ="pasangan">
+  <span>pasangan :</span>
+  <input type="text" id="pasangan" name="pasangan" placeholder="isi pasangan" required>
+</label>
+
+<label for ="pekerjaan">
+  <span>pekerjaan :</span>
+  <input type="text" id="pekerjaan" name="pekerjaan" placeholder="isi pekerjaan" required>
+</label>
+
+<label for ="nama orang tua">
+  <span>nama orang tua :</span>
+  <input type="text" id="nama orang tua" name="nama orang tua" placeholder="isi nama orang tua" required>
+</label>
+
+<label for ="nama kakak">
+  <span>nama kakak :</span>
+  <input type="text" id="nama kakak" name="nama kakak" placeholder="isi nama kakak" required>
+</label>
+
+<label for ="nama adik">
+  <span>nama adik :</span>
+  <input type="text" id="nama adik" name="nama adik" placeholder="isi nama adik" required>
+</label>
+
+    <button type="submit">kirim</button>
+    <button type="reset">batal</button>
+    </form>
+  </section>
+
+
+
+
+
+
+
+
+
     <section id="about">
       <?php
       $nim = 2511500010;
@@ -72,12 +140,12 @@ endif;
         ?> &#128526;
       </p>
       <p><strong>Tempat Lahir:</strong> <?php echo $tempat; ?></p>
-      <p><strong>Tanggal Lahir:</strong> 1 Januari 2000</p>
-      <p><strong>Hobi:</strong> Memasak, coding, dan bermain musik &#127926;</p>
+      <p><strong>Tanggal Lahir:</strong> 03 april 2007</p>
+      <p><strong>Hobi:</strong> bermain game dan bermain raket &#127926;</p>
       <p><strong>Pasangan:</strong> Belum ada &hearts;</p>
-      <p><strong>Pekerjaan:</strong> Dosen di ISB Atma Luhur &copy; 2025</p>
-      <p><strong>Nama Orang Tua:</strong> Bapak Setiawan dan Ibu Maria</p>
-      <p><strong>Nama Kakak:</strong> Antonius Setiawan</p>
+      <p><strong>Pekerjaan:</strong> mahasiswa &copy; 2025</p>
+      <p><strong>Nama Orang Tua:</strong> denymanse dan aminah</p>
+      <p><strong>Nama Kakak:</strong> tidak ada </p>
       <p><strong>Nama Adik:</strong> <?php echo $sespesan ?></p>
     </section>
 
@@ -117,7 +185,7 @@ endif;
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 Yassar manse [2511500013]</p>
   </footer>
 
   <script src="script.js"></script>

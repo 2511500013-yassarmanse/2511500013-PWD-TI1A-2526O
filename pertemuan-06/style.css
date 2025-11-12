@@ -216,7 +216,8 @@ footer {
   }
 
   #about p,
-  #contact label {
+  #contact label
+  # {
     flex-direction: column;
     align-items: flex-start;
   }
