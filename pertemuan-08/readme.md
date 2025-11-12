@@ -10,4 +10,5 @@ Proses saya mengerjakan UTS ini sebagai berikut:<br>
 <ol>
   <li>silahkan diisi sesuai proses pengerjaan kalian masing-masing</li>
   <li>menambahkan file uts ke pertemuan 8</li>
+  <li>membuat profile daftar pengunjung menjadi lurus dan rapih</l1>
 </ol>

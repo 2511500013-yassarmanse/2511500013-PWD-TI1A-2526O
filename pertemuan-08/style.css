@@ -149,14 +149,23 @@ header li a:active {
   font-weight: 500;
 }
 
-#contact button[type="submit"]:hover
+#contact button[type="submit"]:hover{
+ background-color: #0379ee;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+}
 #dataku button [type="submit"]:hover {
   background-color: #0379ee;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-#contact button[type="reset"]:hover
+#contact button[type="reset"]:hover{
+ background-color: #cccccc;
+  transform: translateY(-1px);
+}
+
 #dataku button [type="reset"]:hover {
   background-color: #cccccc;
   transform: translateY(-1px);
