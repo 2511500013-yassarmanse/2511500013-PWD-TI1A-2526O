@@ -54,9 +54,9 @@ endif;
 
 
 
-  <section id="form_profil">
+  <section id="dataku">
     <h2>pendafataran profil pengunjung</h2>
-    <form action="form_profil_proses.php" method="POST">
+    <form action="proses.php" method="POST">
     <label for="nim">
       <span>NIM:</span>
       <input type="text" id="nim" name="nim" placeholder="isi NIM" required>

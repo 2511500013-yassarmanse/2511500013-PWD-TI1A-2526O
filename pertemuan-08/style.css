@@ -51,8 +51,7 @@ header li a:active {
 
 #home:target~header nav a[href="#home"],
 #about:target~header nav a[href="#about"],
-#contact:target~header nav a[href="#contact"]
-#form_profile:target~header nav a[href="#form_profile"] {
+#contact:target~header nav a[href="#contact"]  {
   background: #fff;
   color: #003366;
   font-weight: bold;
@@ -63,7 +62,7 @@ header li a:active {
 #home,
 #about,
 #contact,
-#form_profile {
+#dataku {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
@@ -75,7 +74,7 @@ header li a:active {
 #home h2,
 #about h2,
 #contact h2,
-#form_profile h2 {
+#dataku h2 {
   color: #003366;
   border-bottom: 2px solid #003366;
   padding-bottom: 6px;
@@ -88,8 +87,8 @@ header li a:active {
 }
 
 #about p,
-#contact label
-#form_profile label {
+#contact label, 
+#dataku label{
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
@@ -99,8 +98,8 @@ header li a:active {
 }
 
 #about strong,
-#contact label>span
-#form_profile>strong {
+#contact label,
+#dataku span {
   min-width: 180px;
   color: #003366;
   font-weight: 600;
@@ -110,8 +109,9 @@ header li a:active {
 }
 
 #contact input,
-#contact textarea
-#form_profile textarea{
+#contact textarea,
+#dataku input,
+#dataku textarea {
   flex: 1;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -123,7 +123,7 @@ header li a:active {
 }
 
 #contact button
-#form_profile button {
+#dataku button {
   margin-top: 10px;
   display: inline-block;
   padding: 10px 24px;
@@ -136,28 +136,28 @@ header li a:active {
 }
 
 #contact button[type="submit"]
-#form_profile button[type="submit"] {
+#dataku button[type="submit"] {
   background-color: #003366;
   color: #fff;
   font-weight: 600;
 }
 
 #contact button[type="reset"] 
-#form_profile button[type="reset"] {
+#dataku button[type="reset"] {
   background-color: #b4b4b4;
   color: #272727;
   font-weight: 500;
 }
 
 #contact button[type="submit"]:hover
-#form_profile button[type="submit"]:hover {
+#dataku button [type="submit"]:hover {
   background-color: #0379ee;
   transform: translateY(-1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 #contact button[type="reset"]:hover
-#form_profile button[type="reset"]:hover {
+#dataku button [type="reset"]:hover {
   background-color: #cccccc;
   transform: translateY(-1px);
 }
@@ -228,14 +228,14 @@ footer {
 
   #about p,
   #contact label
-  #form_profile {
+  #dataku label{
     flex-direction: column;
     align-items: flex-start;
   }
 
   #about strong,
   #contact label>span 
-  #form_profile strong {
+  #dataku strong {
     text-align: left;
     padding-right: 0;
     margin-bottom: 2px;
@@ -244,7 +244,7 @@ footer {
   #contact input,
   #contact textarea,
   #contact button
-  #form_profile input{
+  #dataku input{
     width: 100%;
   }
 }
