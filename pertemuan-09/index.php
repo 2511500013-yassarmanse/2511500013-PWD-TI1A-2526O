@@ -21,12 +21,12 @@ $biodata = $_SESSION["biodata"] ?? [];
 
 $fieldconfig = [
   "nim" => ["label" => "NIM", "suffix" => ""],
-  "nama" => ["label" => "Nama Lengkap", "suffix" => ""],
+  "nama" => ["label" => "Nama Lengkap", "suffix" => " &#128526;"],
   "tempat" => ["label" => "Tempat Lahir", "suffix" => ""],
   "tanggal" => ["label" => "Tanggal Lahir", "suffix" => ""],
   "hobi" => ["label" => "Hobi", "suffix" => " &#127926;"],
-  "pasangan" => ["label" => "Pasangan", "suffix" => ""],
-  "pekerjaan" => ["label" => "Pekerjaan", "suffix" => ""],
+  "pasangan" => ["label" => "Pasangan", "suffix" => " &hearts;"],
+  "pekerjaan" => ["label" => "Pekerjaan", "suffix" => "  &copy; 2025"],
   "ortu" => ["label" => "Nama Orang Tua", "suffix" => ""],
   "kakak" => ["label" => "Nama Kakak", "suffix" => ""],
   "adik" => ["label" => "Nama Adik", "suffix" => ""],
