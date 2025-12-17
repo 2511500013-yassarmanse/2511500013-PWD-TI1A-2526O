@@ -118,13 +118,14 @@ $fieldconfig = [
   "kakak" => ["label" => "Nama Kakak", "suffix" => ""],
   "adik" => ["label" => "Nama Adik", "suffix" => ""],
 ];
+?> 
 
-?>  
-    <section id="about">
+  <section id="about">
       <h2>Tentang Saya</h2>
       <?php foreach ($fielconfig as $kunci  => $metadata): ?>
         <p>
-          <strong><?= $metadata["label"] ?>:</strong> <?= $biodata[$kunci] ?? "" ?> 
+          <strong><?= $metadata["label"] ?></strong> 
+          <?= htmlspecialchars(string: $biodata[$kunci] ?? "") ?> 
           <?= $metadata["suffix"] ?> 
       </p>
       <?php endforeach; ?>
