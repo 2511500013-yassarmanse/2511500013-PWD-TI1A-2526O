@@ -122,7 +122,7 @@ $fieldconfig = [
 
   <section id="about">
       <h2>Tentang Saya</h2>
-      <?php foreach ($fielconfig as $kunci  => $metadata): ?>
+      <?php foreach ($fieldconfig as $kunci  => $metadata): ?>
         <p>
           <strong><?= $metadata["label"] ?></strong> 
           <?= htmlspecialchars(string: $biodata[$kunci] ?? "") ?> 
