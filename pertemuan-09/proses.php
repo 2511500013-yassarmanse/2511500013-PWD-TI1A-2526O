@@ -1,43 +1,35 @@
 <?php
 session_start();
+$sesnama = $_POST["txtNama"];
+$sesemail = $_POST["txtEmail"];
+$sespesan = $_POST["txtPesan"];
+$_SESSION["sesnama"] = $sesnama;
+$_SESSION["sesemail"] = $sesemail;
+$_SESSION["sespesan"] = $sespesan;
 
-// Check which form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // --- Handling Biodata Form ---
-    // We check if one of the unique fields of biodata exists
-    if (isset($_POST["txtNim"])) {
-        // Store all biodata fields in an Associative Array
-        $biodata = [
-            "nim" => $_POST["txtNim"] ?? "",
-            "nama" => $_POST["txtNmLengkap"] ?? "",
-            "tempat_lahir" => $_POST["txtT4Lhr"] ?? "",
-            "tanggal_lahir" => $_POST["txtTglLhr"] ?? "",
-            "hobi" => $_POST["txtHobi"] ?? "",
-            "pasangan" => $_POST["txtPasangan"] ?? "",
-            "pekerjaan" => $_POST["txtKerja"] ?? "",
-            "ayah" => $_POST["txtNmOrtu"] ?? "",
-            "kakak" => $_POST["txtNmKakak"] ?? "",
-            "adik" => $_POST["txtNmAdik"] ?? ""
-        ];
+$arrBiodata = [
+"nim" => $_POST["txtNim"] ?? "",
+"nama" => $_POST["txtNmLengkap"] ?? "",
+"tempat" => $_POST["txtT4Lhr"] ?? "",
+"tanggal" => $_POST["txtTglLhr"] ?? "",
+"hobi" => $_POST["txtHobi"] ?? "",
+"pasangan" => $_POST["txtPasangan"] ?? "",
+"pekerjaan" => $_POST["txtKerja"] ?? "",
+"ortu" => $_POST["txtNmOrtu"] ?? "",
+"kakak" => $_POST["txtNmKakak"] ?? "",
+"adik" => $_POST["txtNmAdik"] ?? ""
+];
 
-        // Save the entire array into Session
-        $_SESSION["biodata"] = $biodata;
-    }
-
-    // --- Handling Contact Form ---
-    if (isset($_POST["txtPesan"])) {
-        $contact = [
-            "nama" => $_POST["txtNama"] ?? "",
-            "email" => $_POST["txtEmail"] ?? "",
-            "pesan" => $_POST["txtPesan"] ?? ""
-        ];
-        
-        $_SESSION["contact"] = $contact;
-    }
-}
-
-// Redirect back to index
+$_SESSION["txtNim"] = $txtNim;
+$_SESSION["txtNmLengkap"] = $txtNmLengkap;
+$_SESSION["txtT4Lhr"] = $txtT4Lhr;
+$_SESSION["txtTglLhr"] = $txtTglLhr;
+$_SESSION["txtHobi"] = $txtHobi;
+$_SESSION["txtPasangan"] = $txtPasangan;
+$_SESSION["txtKerja"] = $txtKerja;
+$_SESSION["txtNmOrtu"] = $txtNmOrtu;
+$_SESSION["txtNmKakak"] = $txtNmKakak;
+$_SESSION["txtNmAdik"] = $txtNmAdik;
 header("location: index.php");
-exit();
 ?>

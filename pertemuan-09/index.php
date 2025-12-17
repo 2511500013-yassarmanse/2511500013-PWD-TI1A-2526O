@@ -1,30 +1,70 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-require_once "functions.php";
 
-// Initialize variables using helper function from Session Array
-$biodata = $_SESSION["biodata"] ?? [];
-$contact = $_SESSION["contact"] ?? [];
+$sesnama = "";
+if (isset($_SESSION["sesnama"])):
+  $sesnama = $_SESSION["sesnama"];
+endif;
 
-// Extract biodata for form values (keeping them empty if not set)
-$nim = getValue($biodata, "nim");
-$nama = getValue($biodata, "nama");
-$tempat_lahir = getValue($biodata, "tempat_lahir");
-$tanggal_lahir = getValue($biodata, "tanggal_lahir");
-$hobi = getValue($biodata, "hobi");
-$pasangan = getValue($biodata, "pasangan");
-$pekerjaan = getValue($biodata, "pekerjaan");
-$ayah = getValue($biodata, "ayah");
-$kakak = getValue($biodata, "kakak");
-$adik = getValue($biodata, "adik");
+$sesemail = "";
+if (isset($_SESSION["sesemail"])):
+  $sesemail = $_SESSION["sesemail"];
+endif;
 
-// Extract contact for display
-$contact_nama = getValue($contact, "nama");
-$contact_email = getValue($contact, "email");
-$contact_pesan = getValue($contact, "pesan");
+$sespesan = "";
+if (isset($_SESSION["sespesan"])):
+  $sespesan = $_SESSION["sespesan"];
+endif;
+
+$txtNim = "";
+if (isset($_SESSION["txtNim"])):
+  $txtNim = $_SESSION["txtNim"];
+endif;
+
+$txtNmLengkap = "";
+if (isset($_SESSION["txtNmLengkap"])):
+  $txtNmLengkap = $_SESSION["txtNmLengkap"];
+endif;
+
+$txtT4Lhr = "";
+if (isset($_SESSION["txtT4Lhr"])):
+  $txtT4Lhr = $_SESSION["txtT4Lhr"];
+endif;
+
+$txtTglLhr = "";
+if (isset($_SESSION["txtTglLhr"])):
+  $txtTglLhr = $_SESSION["txtTglLhr"];
+endif;
+
+$txtHobi = "";
+if (isset($_SESSION["txtHobi"])):
+  $txtHobi = $_SESSION["txtHobi"];
+endif;
+
+$txtPasangan = "";
+if (isset($_SESSION["txtPasangan"])):
+  $txtPasangan = $_SESSION["txtPasangan"];
+endif;
+
+$txtKerja = "";
+if (isset($_SESSION["txtKerja"])):
+  $txtKerja = $_SESSION["txtKerja"];
+endif;
+
+$txtNmOrtu = "";
+if (isset($_SESSION["txtNmOrtu"])):
+  $txtNmOrtu = $_SESSION["txtNmOrtu"];
+endif;
+
+$txtNmKakak = "";
+if (isset($_SESSION["txtNmKakak"])):
+  $txtNmKakak = $_SESSION["txtNmKakak"];
+endif;
+
+$txtNmAdik = "";
+if (isset($_SESSION["txtNmAdik"])):
+  $txtNmAdik = $_SESSION["txtNmAdik"];
+endif;
 ?>
 
 <!DOCTYPE html>
@@ -67,43 +107,43 @@ $contact_pesan = getValue($contact, "pesan");
       <form action="proses.php" method="POST">
 
         <label for="txtNim"><span>NIM:</span>
-          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" value="<?= $nim ?>" required>
+          <input type="text" id="txtNim" name="txtNim" placeholder="Masukkan NIM" required>
         </label>
 
         <label for="txtNmLengkap"><span>Nama Lengkap:</span>
-          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" value="<?= $nama ?>" required>
+          <input type="text" id="txtNmLengkap" name="txtNmLengkap" placeholder="Masukkan Nama Lengkap" required>
         </label>
 
         <label for="txtT4Lhr"><span>Tempat Lahir:</span>
-          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" value="<?= $tempat_lahir ?>" required>
+          <input type="text" id="txtT4Lhr" name="txtT4Lhr" placeholder="Masukkan Tempat Lahir" required>
         </label>
 
         <label for="txtTglLhr"><span>Tanggal Lahir:</span>
-          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" value="<?= $tanggal_lahir ?>" required>
+          <input type="text" id="txtTglLhr" name="txtTglLhr" placeholder="Masukkan Tanggal Lahir" required>
         </label>
 
         <label for="txtHobi"><span>Hobi:</span>
-          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" value="<?= $hobi ?>" required>
+          <input type="text" id="txtHobi" name="txtHobi" placeholder="Masukkan Hobi" required>
         </label>
 
         <label for="txtPasangan"><span>Pasangan:</span>
-          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" value="<?= $pasangan ?>" required>
+          <input type="text" id="txtPasangan" name="txtPasangan" placeholder="Masukkan Pasangan" required>
         </label>
 
         <label for="txtKerja"><span>Pekerjaan:</span>
-          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" value="<?= $pekerjaan ?>" required>
+          <input type="text" id="txtKerja" name="txtKerja" placeholder="Masukkan Pekerjaan" required>
         </label>
 
         <label for="txtNmOrtu"><span>Nama Orang Tua:</span>
-          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" value="<?= $ayah ?>" required>
+          <input type="text" id="txtNmOrtu" name="txtNmOrtu" placeholder="Masukkan Nama Orang Tua" required>
         </label>
 
         <label for="txtNmKakak"><span>Nama Kakak:</span>
-          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" value="<?= $kakak ?>" required>
+          <input type="text" id="txtNmKakak" name="txtNmKakak" placeholder="Masukkan Nama Kakak" required>
         </label>
 
          <label for="txtNmAdik"><span>Nama Adik:</span>
-          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" value="<?= $adik ?>" required>
+          <input type="text" id="txtNmAdik" name="txtNmAdik" placeholder="Masukkan Nama Adik" required>
         </label>
 
         <button type="submit">Kirim</button>
@@ -114,19 +154,16 @@ $contact_pesan = getValue($contact, "pesan");
 
     <section id="about">
       <h2>Tentang Saya</h2>
-      <?php
-      // Use helper function defined in functions.php
-      echo renderBiodataRow("NIM", $nim);
-      echo renderBiodataRow("Nama Lengkap", $nama, "&#128526;");
-      echo renderBiodataRow("Tempat Lahir", $tempat_lahir);
-      echo renderBiodataRow("Tanggal Lahir", $tanggal_lahir);
-      echo renderBiodataRow("Hobi", $hobi, "&#127926;");
-      echo renderBiodataRow("Pasangan", $pasangan, "&hearts;");
-      echo renderBiodataRow("Pekerjaan", $pekerjaan, "&copy; 2025");
-      echo renderBiodataRow("Nama Orang Tua", $ayah);
-      echo renderBiodataRow("Nama Kakak", $kakak);
-      echo renderBiodataRow("Nama Adik", $adik);
-      ?>
+      <p><strong>NIM:</strong> <?= $txtNim ?></p>
+      <p><strong>Nama Lengkap:</strong> <?= $txtNmLengkap ?> &#128526;</p>
+      <p><strong>Tempat Lahir:</strong> <?= $txtT4Lhr ?></p>
+      <p><strong>Tanggal Lahir:</strong> <?= $txtTglLhr ?></p>
+      <p><strong>Hobi:</strong> <?= $txtHobi ?> &#127926;</p>
+      <p><strong>Pasangan:</strong> <?= $txtPasangan ?> &hearts;</p>
+      <p><strong>Pekerjaan:</strong> <?= $txtKerja ?> &copy; 2025</p>
+      <p><strong>Nama Orang Tua:</strong> <?= $txtNmOrtu ?></p>
+      <p><strong>Nama Kakak:</strong> <?= $txtNmKakak ?></p>
+      <p><strong>Nama Adik:</strong> <?= $txtNmAdik ?></p>
     </section>
 
     <section id="contact">
@@ -150,13 +187,15 @@ $contact_pesan = getValue($contact, "pesan");
         <button type="reset">Batal</button>
       </form>
 
-      <?php if (!empty($contact_nama)): ?>
+      <?php if (!empty($sesnama)): ?>
         <br><hr>
         <h2>Yang menghubungi kami</h2>
-        <p><strong>Nama :</strong> <?= $contact_nama ?></p>
-        <p><strong>Email :</strong> <?= $contact_email ?></p>
-        <p><strong>Pesan :</strong> <?= $contact_pesan ?></p>
+        <p><strong>Nama :</strong> <?php echo $sesnama ?></p>
+        <p><strong>Email :</strong> <?php echo $sesemail ?></p>
+        <p><strong>Pesan :</strong> <?php echo $sespesan ?></p>
       <?php endif; ?>
+
+
 
     </section>
   </main>
