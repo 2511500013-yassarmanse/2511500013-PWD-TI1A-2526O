@@ -45,7 +45,8 @@
   <?php while ($row = mysqli_fetch_assoc($q)): ?>
     <tr>
       <td><?= $i++ ?></td>
-      <td><a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a></td>
+      <a href="edit.php?cid=<?= (int)$row['cid']; ?>">Edit</a></td>
+      <a href="proses_delete.php">Delete</a>
       <td><?= $row['cid']; ?></td>
       <td><?= htmlspecialchars($row['cnama']); ?></td>
       <td><?= htmlspecialchars($row['cemail']); ?></td>
