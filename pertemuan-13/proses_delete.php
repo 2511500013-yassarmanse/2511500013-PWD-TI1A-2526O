@@ -13,36 +13,17 @@
 //     redirect_ke('edit.php?cid='. (int)$cid);
 //   }
 
-  
-  #Validasi sederhana
-  $errors = []; #ini array untuk menampung semua error yang ada
-    
-  /*
-  kondisi di bawah ini hanya dikerjakan jika ada error, 
-  simpan nilai lama dan pesan error, lalu redirect (konsep PRG)
-  */
-  if (!empty($errors)) {
-    $_SESSION['old'] = [
-      'nama'  => $nama,
-      'email' => $email,
-      'pesan' => $pesan
-    ];
-
-    $_SESSION['flash_error'] = implode('<br>', $errors);
-    redirect_ke('edit.php?cid='. (int)$cid);
-  }
-
   /*
     Prepared statement untuk anti SQL injection.
     menyiapkan query UPDATE dengan prepared statement 
     (WAJIB WHERE cid = ?)
   */
-  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_tamu"); 
+  $stmt = mysqli_prepare($conn, "DELETE FROM tbl_tamu");
                                 #WHERE cid = ?");
   if (!$stmt) {
     #jika gagal prepare, kirim pesan error (tanpa detail sensitif)
     $_SESSION['flash_error'] = 'Terjadi kesalahan sistem (prepare gagal).';
-    redirect_ke('edit.php?');
+    redirect_ke('read.php');
   }
 
   #bind parameter dan eksekusi (s = string, i = integer)
@@ -52,11 +33,13 @@
     /*
       Redirect balik ke read.php dan tampilkan info sukses.
     */
-    $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah diperbaharui.';
+    $_SESSION['flash_sukses'] = 'Terima kasih, data Anda sudah dihapus.';
   } else { #jika gagal, simpan kembali old value dan tampilkan error umum
-    $_SESSION['flash_error'] = 'Data gagal diperbaharui. Silakan coba lagi.';
+
+    $_SESSION['flash_error'] = 'Data gagal dihapus. Silakan coba lagi.';
   }
+  
   #tutup statement
   mysqli_stmt_close($stmt);
 
-  redirect_ke('edit.php');
+  redirect_ke('read.php');

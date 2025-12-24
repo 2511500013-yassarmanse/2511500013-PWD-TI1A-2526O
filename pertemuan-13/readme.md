@@ -6,4 +6,6 @@ nama saya : yassarmanse <br>
 <li>import sql bahan praktikum pertemuan-13</li>
 <li>menambah link delete untul file proses_update.php</li>
 <li>copy proses_update.php ke proses_delete.php</li>
+<li> meng hapus redirect beberapa karena sudah tidak terpakai</li>
+<li>nambah parameter  cid untuk link delete di read.php</li>
 </li>
