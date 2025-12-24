@@ -8,4 +8,6 @@ nama saya : yassarmanse <br>
 <li>copy proses_update.php ke proses_delete.php</li>
 <li> meng hapus redirect beberapa karena sudah tidak terpakai</li>
 <li>nambah parameter  cid untuk link delete di read.php</li>
+<li>memperbaiki file proses_delete.php agar bisa di pakai parameter cid</li>
+<li>menambahkan konfirmasi penghapusan  di read.php</li>
 </li>
