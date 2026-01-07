@@ -169,7 +169,7 @@ require_once __DIR__ . '/fungsi.php';
   </main>
 
   <footer>
-    <p>&copy; 2025 Yohanes Setiawan Japriadi [0344300002]</p>
+    <p>&copy; 2025 yassarmanse [2511500013]</p>
   </footer>
 
   <script src="script.js"></script>
