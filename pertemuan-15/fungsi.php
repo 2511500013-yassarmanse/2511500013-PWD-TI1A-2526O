@@ -1,5 +1,5 @@
 <?php
-require_once '/koneksi.php';
+require_once 'koneksi.php';
 if (isset($_POST['submit'])) {
     $nim = $_POST['txtNim'];
     $nama = $_POST['txtnamalengkap'];
