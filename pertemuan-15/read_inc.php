@@ -20,7 +20,6 @@ if (!$q) {
       "email" => $row["cemail"] ?? "",
       "pesan" => $row["cpesan"] ?? "",
     ];
-    echo tampilkanBiodata($fieldContact, $arrContact);
   }
 }
 ?>
