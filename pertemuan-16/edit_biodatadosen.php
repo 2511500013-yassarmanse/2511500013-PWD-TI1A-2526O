@@ -10,14 +10,14 @@ $cmid = filter_input(INPUT_GET, 'cmid', FILTER_VALIDATE_INT, [
 
 if (!$cmid) {
     $_SESSION['flash_error_mhs'] = 'Akses tidak valid.';
-    redirect_ke('read_mahasiswa.php');
+    redirect_ke('read_biodatadosen.php');
 }
 
 # Ambil data lama dari database
-$stmt = mysqli_prepare($conn, "SELECT * FROM tbl_mahasiswa WHERE cmid = ? LIMIT 1");
+$stmt = mysqli_prepare($conn, "SELECT * FROM tbl_biodatadosen WHERE cmid = ? LIMIT 1");
 if (!$stmt) {
     $_SESSION['flash_error_mhs'] = 'Query tidak benar.';
-    redirect_ke('read_mahasiswa.php');
+    redirect_ke('read_biodatadosen.php');
 }
 
 mysqli_stmt_bind_param($stmt, "i", $cmid);
