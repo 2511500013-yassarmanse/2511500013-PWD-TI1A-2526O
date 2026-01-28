@@ -13,6 +13,12 @@ if (!$cmid) {
     redirect_ke('read_biodatadosen.php');
 }
 
+# Ambil data lama dari database
+$stmt = mysqli_prepare($conn, "SELECT * FROM tbl_mahasiswa WHERE cmid = ? LIMIT 1");
+if (!$stmt) {
+    $_SESSION['flash_error_mhs'] = 'Query tidak benar.';
+    redirect_ke('read_mahasiswa.php');
+}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
