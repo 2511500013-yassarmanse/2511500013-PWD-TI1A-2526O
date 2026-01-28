@@ -29,15 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_mahasiswa` (
   `cmid` int NOT NULL,
-  `cnim` varchar(20) NOT NULL,
-  `cnama` varchar(100) NOT NULL,
-  `ctempat_lahir` varchar(50) NOT NULL,
-  `ctanggal_lahir` date NOT NULL,
-  `chobi` varchar(100) NOT NULL,
-  `cpasangan` varchar(50) DEFAULT NULL,
-  `cpekerjaan` varchar(50) DEFAULT NULL,
-  `cnama_ortu` varchar(100) NOT NULL,
-  `cnama_kakak` varchar(100) DEFAULT NULL,
+  `ckode_dosen` varchar(20) NOT NULL,
+  `cnama_dosen` varchar(100) NOT NULL,
+  `calamat_rumah` varchar(50) NOT NULL,
+  `ctangal_jadi_dosen` date NOT NULL,
+  `cjja_dosen` varchar(100) NOT NULL,
+  `chomebase_pribadi` varchar(50) DEFAULT NULL,
+  `nomor_hp` varchar(50) DEFAULT NULL,
+  `cnama_pasangan` varchar(100) NOT NULL,
+  `cbidan_ilmu_dosen` varchar(100) DEFAULT NULL,
   `cnama_adik` varchar(100) DEFAULT NULL,
   `dcreated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `dupdated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -51,7 +51,7 @@ CREATE TABLE `tbl_mahasiswa` (
 
 CREATE TABLE `tbl_tamu` (
   `cid` int NOT NULL,
-  `cnama` varchar(100) DEFAULT NULL,
+  `cnama_dosen` varchar(100) DEFAULT NULL,
   `cemail` varchar(100) DEFAULT NULL,
   `cpesan` text,
   `dcreated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -75,9 +75,8 @@ INSERT INTO `tbl_tamu` (`cid`, `cnama`, `cemail`, `cpesan`, `dcreated_at`) VALUE
 --
 ALTER TABLE `tbl_mahasiswa`
   ADD PRIMARY KEY (`cmid`),
-  ADD UNIQUE KEY `cnim` (`cnim`),
-  ADD KEY `idx_nim` (`cnim`),
-  ADD KEY `idx_nama` (`cnama`);
+  ADD UNIQUE KEY `ckode_dosen` (`ckode_dosen`),
+  ADD KEY `idx_nama` (`cnama_dosen`);
 
 --
 -- Indexes for table `tbl_tamu`
