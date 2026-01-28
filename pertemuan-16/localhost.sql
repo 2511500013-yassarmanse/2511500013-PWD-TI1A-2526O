@@ -31,8 +31,8 @@ USE `db_pwd2025`;
 
 CREATE TABLE `tbl_tamu` (
   `cid` int NOT NULL,
-  `cnama` varchar(100) DEFAULT NULL,
-  `cemail` varchar(100) DEFAULT NULL,
+  `ckode_dosen` varchar(100) DEFAULT NULL,
+  `cnama_dosenn` varchar(100) DEFAULT NULL,
   `cpesan` text,
   `dcreated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
