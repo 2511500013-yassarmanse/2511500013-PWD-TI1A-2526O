@@ -91,7 +91,7 @@ ALTER TABLE `tbl_tamu`
 --
 -- AUTO_INCREMENT for table `tbl_mahasiswa`
 --
-ALTER TABLE `tbl_mahasiswa`
+ALTER TABLE `tbl_biodata_dosen`
   MODIFY `cmid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
