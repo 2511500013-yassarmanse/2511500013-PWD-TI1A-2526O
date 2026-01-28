@@ -19,37 +19,45 @@ if (!$stmt) {
     $_SESSION['flash_error_mhs'] = 'Query tidak benar.';
     redirect_ke('read_mahasiswa.php');
 }
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Judul Halaman</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+mysqli_stmt_bind_param($stmt, "i", $cmid);
+mysqli_stmt_execute($stmt);
+$res = mysqli_stmt_get_result($stmt);
+$row = mysqli_fetch_assoc($res);
+mysqli_stmt_close($stmt);
 
-<body>
-  <header>
-    <h1>Ini Header</h1>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-      &#9776;
-    </button>
-    <nav>
-      <ul>
-        <li><a href="#home">Beranda</a></li>
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#contact">Kontak</a></li>
-      </ul>
-    </nav>
-  </header>
+if (!$row) {
+    $_SESSION['flash_error_mhs'] = 'Data mahasiswa tidak ditemukan.';
+    redirect_ke('read_mahasiswa.php');
+}
 
-  <main>
-    <section id="home">
-      <h2>Selamat Datang</h2>
-      <?php
-      echo "halo dunia!<br>";
-      echo "nama saya hadi";
-      ?>
-      <p>Ini contoh paragraf HTML.</p>
-    </section>
+# Nilai awal (prefill form)
+$nim = $row['cnim'] ?? '';
+$nama = $row['cnama'] ?? '';
+$tempat_lahir = $row['ctempat_lahir'] ?? '';
+$tanggal_lahir = date('Y-m-d', strtotime($row['ctanggal_lahir'])) ?? '';
+$hobi = $row['chobi'] ?? '';
+$pasangan = $row['cpasangan'] ?? '';
+$pekerjaan = $row['cpekerjaan'] ?? '';
+$nama_ortu = $row['cnama_ortu'] ?? '';
+$nama_kakak = $row['cnama_kakak'] ?? '';
+$nama_adik = $row['cnama_adik'] ?? '';
+
+# Ambil error dan nilai old input jika ada
+$flash_error = $_SESSION['flash_error_edit'] ?? '';
+$old = $_SESSION['old_edit'] ?? [];
+unset($_SESSION['flash_error_edit'], $_SESSION['old_edit']);
+
+if (!empty($old)) {
+    $nama = $old['nama'] ?? $nama;
+    $tempat_lahir = $old['tempat_lahir'] ?? $tempat_lahir;
+    $tanggal_lahir = $old['tanggal_lahir'] ?? $tanggal_lahir;
+    $hobi = $old['hobi'] ?? $hobi;
+    $pasangan = $old['pasangan'] ?? $pasangan;
+    $pekerjaan = $old['pekerjaan'] ?? $pekerjaan;
+    $nama_ortu = $old['nama_ortu'] ?? $nama_ortu;
+    $nama_kakak = $old['nama_kakak'] ?? $nama_kakak;
+    $nama_adik = $old['nama_adik'] ?? $nama_adik;
+}
 
     <section id="biodata">
       <h2>Biodata Dosen</h2>
